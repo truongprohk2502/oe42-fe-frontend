@@ -1,0 +1,29 @@
+@import "../../assets/style/vars"
+@import "../../assets/style/common"
+
+article.schedule-component-container
+    margin-top: 2rem
+    section.cinema-name
+        width: fit-content
+        background-color: $color-orange-dark
+        color: white
+        border-left: 0.5rem solid black
+        padding: 0.5rem 1rem
+        min-width: 20rem
+    section.schedule-bound
+        display: flex
+        flex-wrap: wrap
+        padding: 1rem 2rem
+        border: 1px solid #b7b196
+        a
+            transition-duration: 0.3s
+            @include link-style(black, $color-orange-dark)
+        .schedule-item
+            padding: 0.3rem 0.8rem
+            border: 1px solid #b7b196
+            margin: 0.5rem
+            cursor: pointer
+            transition-duration: 0.3s
+            &:hover
+                color: $color-orange-dark
+                border: 1px solid $color-orange-dark

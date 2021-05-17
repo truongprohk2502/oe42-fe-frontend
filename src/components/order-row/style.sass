@@ -1,0 +1,35 @@
+@import "../../assets/style/vars"
+@import "../../assets/style/common"
+
+td.quantity
+    input
+        width: 3rem
+        text-align: center
+        -webkit-appearance: none
+        border: 1px solid lightgrey
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button
+            -webkit-appearance: none
+            margin: 0
+        &:focus
+            border: 1px solid black
+            outline: none
+    i
+        cursor: pointer
+        &:first-of-type
+            margin-right: 0.5rem
+        &:last-of-type
+            margin-left: 0.5rem
+        &[class~="disabled"]
+            cursor: not-allowed
+            color: grey
+td.main-col
+    width: 100%
+    min-width: 10rem
+td.combo-col
+    width: 100%
+    & > div
+        display: flex
+        img
+            width: 5rem
+            margin-right: 0.5rem

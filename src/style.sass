@@ -1,0 +1,59 @@
+@import "./assets/style/vars"
+@import "./assets/style/common"
+
+body
+    margin: 0
+    padding: 0
+    font-family: 'Arial', 'Helvetica', 'sans-serif'
+
+.responsive-container
+    padding: 3rem 3rem
+    @media screen and ( $lg )
+        padding: 3rem 10rem
+    @media screen and ( $lg )
+        padding: 3rem 5rem
+    @media screen and ( $xxl )
+        padding: 3rem 15rem
+
+article.promotion-item
+    position: relative
+    overflow: hidden
+    img
+        width: 100%
+    .info
+        visibility: hidden
+        @extend %absolute-zero
+        background-color: rgba(0, 0, 0, 0.5)
+        padding: 0.8rem
+        color: white
+        display: flex
+        flex-direction: column
+        transition-duration: 0.3s
+        opacity: 0
+        h5
+            @include limit-row(2)
+            text-transform: uppercase
+            font-size: 1rem
+            min-height: 2rem
+        p
+            @include limit-row(8)
+            font-size: 0.9rem
+        span
+            display: inline-block
+            justify-self: flex-end
+            width: fit-content
+            margin-top: auto
+            margin-left: auto
+            margin-right: auto
+            border: 1px solid white
+            transition-duration: 0.3s
+            padding: 0.3rem 1.5rem
+            @include link-style(white, white)
+            &:hover, &:active
+                color: white
+                border: 1px solid $color-orange-dark
+                background-color: $color-orange-dark
+    &:hover
+        .info
+            opacity: 1
+            visibility: visible

@@ -1,0 +1,27 @@
+@import "../../assets/style/vars"
+@import "../../assets/style/common"
+
+section.not-found-container
+    @extend %absolute-zero
+    @extend %flex-center
+    background-color: black
+    font-size: 1rem
+    @media screen and ( $md )
+        font-size: 2rem
+    .content-container
+        max-width: fit-content
+        position: relative
+        .message
+            font-family: "Times New Roman", Times, serif
+            position: absolute
+            top: 1em
+            left: 0
+            right: 0
+            color: red
+            font-size: 2em
+            text-align: center
+        .error-code
+            font-weight: bold
+            font-size: 10em
+            color: #393939
+            transform: rotateZ(-30deg)

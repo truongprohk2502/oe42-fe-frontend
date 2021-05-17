@@ -1,0 +1,38 @@
+@import "../../../assets/style/vars"
+@import "../../../assets/style/common"
+
+section.order-type-and-food-container
+    background-color: $color-orange-dark
+    padding: 1rem
+    .order-main-title
+        color: white
+        font-size: 1.2rem
+        font-weight: bold
+        text-transform: uppercase
+    .table-container
+        margin: 1rem 0
+        @extend %custom-scroll-bar
+        table
+            thead
+                background-color: $color-black
+                color: white
+                th
+                    font-weight: normal
+            tbody
+                tr
+                    background-color: whitesmoke
+                    &:nth-child(even)
+                        background-color: lightgrey
+                    &[class~="total"]
+                        color: $color-orange-dark
+            th, td
+                padding: 0.5rem
+                &:not([class~="main-col"])
+                    white-space: nowrap
+            .price
+                text-align: right
+            th.quantity
+                text-align: center
+    .total-container
+        .title
+            color: white

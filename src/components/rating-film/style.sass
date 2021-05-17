@@ -1,0 +1,27 @@
+@import "../../assets/style/vars"
+@import "../../assets/style/common"
+
+.rating-film-container
+    display: flex
+    button.rating-button
+        @include style-button(white, $color-orange-dark)
+        font-size: 0.9rem
+        padding: 0.2rem 0.5rem
+        margin-left: 1rem
+        text-transform: uppercase
+    .rating-group
+        display: flex
+        flex-direction: row-reverse
+        margin-left: 1rem
+        .rating-item
+            cursor: pointer
+            color: $light-grey-text
+            padding-right: 0.2rem
+            &[class~="active"]
+                color: red
+                & ~ .rating-item
+                    color: red
+            &:hover
+                color: $yellow-color!important
+                & ~ .rating-item
+                    color: $yellow-color!important

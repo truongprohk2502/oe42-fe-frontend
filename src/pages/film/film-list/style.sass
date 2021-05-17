@@ -1,0 +1,21 @@
+@import "../../../assets/style/vars"
+@import "../../../assets/style/common"
+
+main.film-list-container
+    .list-film-bound
+        display: grid
+        grid-template-columns: repeat(1, 1fr)
+        grid-gap: 1rem
+        @media screen and ( $sm )
+            grid-template-columns: repeat(2, 1fr)
+        @media screen and ( $md )
+            grid-template-columns: repeat(3, 1fr)
+        @media screen and ( $lg )
+            grid-template-columns: repeat(4, 1fr)
+        article.film-item
+            @extend %film-article-photo
+    .empty-data
+        text-align: center
+        font-size: 1.2rem
+        color: red
+        padding: 6.5rem 0

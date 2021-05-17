@@ -1,0 +1,33 @@
+@import "../../../../../assets/style/vars"
+@import "../../../../../assets/style/common"
+
+.list-schedule-container
+    button.add-btn
+        @extend %add-button
+    form
+        width: fit-content
+        border: 1px solid lightgrey
+        border-radius: 0.5rem
+        padding: 1rem
+        .input-item
+            label
+                min-width: 8rem
+            select, input
+                width: 10rem
+        span
+            font-size: 0.9rem
+            color: red
+            display: inline-block
+            margin-bottom: 0.5rem
+        .button-group
+            width: fit-content
+            margin: auto
+            margin-top: 0.6rem
+            button
+                border: none
+                border-radius: 0.2rem
+                background-color: $light-grey-bg-color
+                &:focus
+                    outline: none
+                &:first-of-type
+                    margin-right: 0.5rem

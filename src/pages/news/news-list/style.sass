@@ -1,0 +1,43 @@
+@import "../../../assets/style/vars"
+@import "../../../assets/style/common"
+
+section.list-news-container
+    @media screen and ( $md )
+        grid-column: 1 / span 2
+    @media screen and ( $lg )
+        grid-column: 1 / span 3
+    .news-title
+        width: fit-content
+        font-size: 1.2rem
+        font-weight: bold
+        border-bottom: 2px solid orange
+        margin-bottom: 2rem
+        text-transform: uppercase
+    .news-item-container
+        article.news-item
+            margin-bottom: 1rem
+            display: grid
+            grid-gap: 0.8rem
+            grid-template-columns: 1fr
+            @media screen and ( $md )
+                grid-template-columns: repeat(2, 1fr)
+            @media screen and ( $lg )
+                grid-template-columns: repeat(3, 1fr)
+                section.img-container
+                    grid-column: 1 / 2
+                section.info-container
+                    grid-column: 2 / 4
+            section.img-container
+                img
+                    max-width: 100%
+            section.info-container
+                a.title
+                    @include link-style(black, $color-orange-dark)
+                .rating
+                    @extend %rating-container
+                p.description
+                    @include limit-row(4)
+                    font-size: 0.9rem
+                    color: $light-grey-text
+    .pagination-section
+        margin-top: 1rem

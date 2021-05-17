@@ -1,0 +1,154 @@
+@import "./vars"
+
+%flex-center
+    display: flex
+    justify-content: center
+    align-items: center
+
+%absolute-zero
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+
+%title
+    width: fit-content
+    font-size: 1.2rem
+    font-weight: bold
+    border-bottom: 2px solid orange
+
+%rating-container
+    margin: 0.5rem 0
+    i.fa
+        margin-right: 0.3rem
+        color: $yellow-color
+    span
+        color: $light-grey-text
+
+%film-article-photo
+    position: relative
+    img
+        width: 100%
+    .action
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0.3rem
+        right: 0.3rem
+        background-color: rgba(0, 0, 0, 0.5)
+        visibility: hidden
+        opacity: 0
+        transition-duration: 0.3s
+        @extend %flex-center
+        flex-direction: column
+        a
+            display: block
+            width: fit-content
+            background-color: transparent
+            color: $color-orange
+            border: 1px solid $color-orange
+            margin: 0.5rem auto
+            transition-duration: 0.2s
+            text-decoration: none
+            padding: 0 0.5rem
+            &:hover, &:active
+                background-color: $color-orange-dark
+                border: 1px solid $color-orange-dark
+                color: white
+    &:hover
+        .action
+            visibility: visible
+            opacity: 1
+
+%custom-scroll-bar
+    overflow-x: auto
+    &::-webkit-scrollbar
+        border-radius: 10px
+        height: 0.5rem
+    &::-webkit-scrollbar-thumb
+        background: #999
+        border-radius: 0.5rem
+    &::-webkit-scrollbar-track
+        border-radius: 0.5rem
+
+%edit-form
+    margin: auto
+    display: flex
+    flex-direction: column
+    &:last-of-type
+        margin-top: 2rem
+    @media screen and ( $md )
+        width: 50%
+    .form-title
+        font-size: 1.2rem
+        font-weight: bold
+    .input-item
+        display: grid
+        margin: 1rem 0 0.5rem 0
+        @media screen and ( $sm )
+            grid-template-columns: 1fr 3fr
+    & > span
+        color: red
+        font-size: 0.9rem
+        padding-left: 25%
+    button
+        border: 1px solid lightgrey
+        margin-top: 1rem
+        padding: 0.2rem 1rem
+        border-radius: 0.3rem
+        width: fit-content
+        margin: auto
+        margin-top: 1rem
+        &:focus
+            outline: none
+
+%add-button
+    margin-bottom: 1rem
+    padding: 0.3rem 0.6rem
+    border-radius: 0.2rem
+    color: white
+    background-color: $color-orange-dark
+    border: none
+    &:focus
+        outline: none
+
+%orange-button
+    margin-bottom: 1rem
+    padding: 0.3rem 0.6rem
+    border-radius: 0.2rem
+    color: white
+    background-color: $color-orange-dark
+    border: none
+    &:focus
+        outline: none
+
+
+
+@mixin link-style($normalColor, $hoverColor)
+    text-decoration: none
+    &:link, &:visited
+        color: $normalColor
+    &:hover, &:active
+        color: $hoverColor
+
+@mixin limit-row($rowQty)
+    display: -webkit-box
+    -webkit-line-clamp: $rowQty
+    -webkit-box-orient: vertical
+    overflow: hidden
+    text-overflow: ellipsis
+
+@mixin transparent-button($color)
+    border: none
+    color: $color
+    background-color: transparent
+    &:focus
+        outline: none
+
+@mixin style-button($color, $bgColor)
+    border: none
+    background-color: $bgColor
+    color: $color
+    &:focus
+        outline: none

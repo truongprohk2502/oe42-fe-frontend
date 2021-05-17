@@ -1,0 +1,37 @@
+@import "../../assets/style/vars"
+@import "../../assets/style/common"
+
+%arrow-button
+    position: absolute
+    top: 0
+    bottom: 0
+    display: flex
+    align-items: center
+    i.fa
+        font-size: 2rem
+        font-weight: bold
+        cursor: pointer
+
+section.slider
+    position: relative
+    .left-arrow
+        @extend %arrow-button
+        left: -1.5rem
+    .right-arrow
+        @extend %arrow-button
+        right: -1.5rem
+    .slider-container
+        overflow: hidden
+        .slider-group
+            display: flex
+            transition-duration: 1s
+            .slider-item
+                @extend %film-article-photo
+                min-width: 100%
+                padding: 0 0.3rem
+                @media screen and ( $sm )
+                    min-width: 50%
+                @media screen and ( $md )
+                    min-width: 25%
+                @media screen and ( $lg )
+                    min-width: 20%

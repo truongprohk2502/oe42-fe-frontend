@@ -1,0 +1,95 @@
+@import "../../assets/style/vars"
+@import "../../assets/style/common"
+
+%dropdown-menu
+    ul
+        display: flex
+        justify-content: flex-end
+        margin-bottom: 0.2rem
+        flex-direction: column
+        position: absolute
+        top: 100%
+        left: 0
+        right: 0
+        background-color: lightgrey
+        padding: 0.5rem 0
+        z-index: 100
+    @media screen and ( $sm )
+        ul
+            position: static
+            flex-direction: row
+            background-color: transparent
+
+%list-style
+    list-style: none
+    padding: 0
+    margin: 0
+
+header
+    nav.top-header
+        background-color: $main-bg-color
+        padding: 0.5rem 1rem
+        position: relative
+        @extend %dropdown-menu
+        button.menu-button
+            @include transparent-button(black)
+        ul
+            @extend %list-style
+            li
+                margin-left: 1rem
+                a
+                    color: $color-black
+                    font-size: 0.8rem
+                    &:link, &:visited
+                        text-decoration: none
+                    &:hover, &:active
+                        text-decoration: underline
+                form
+                    position: relative
+                    input
+                        background-color: transparent
+                        border: 1px solid $color-black
+                        padding: 0 1.7rem 0 0.5rem
+                    button
+                        height: 100%
+                        @include transparent-button(black)
+                        position: absolute
+                        right: 0
+                select
+                    background-color: transparent
+                    &:focus
+                        outline: none
+        @media screen and ( $sm )
+            ul
+                flex-direction: row
+                justify-content: flex-end
+    section.main-logo
+        display: flex
+        justify-content: center
+        a
+            display: inline-block
+            margin: 1rem 0
+            img
+                width: 100%
+    nav.bottom-header
+        border-top: 0.2rem solid $light-border-color
+        border-bottom: 1px solid $light-border-color
+        padding: 1rem 0
+        position: relative
+        @extend %dropdown-menu
+        button.menu-button
+            display: block
+            margin-left: auto
+            margin-right: 1rem
+            @include transparent-button(black)
+        ul
+            @extend %list-style
+            justify-content: center
+            li
+                padding: 0 1rem
+                border-right: 1px solid $light-border-color
+                &:last-of-type
+                    border-right: none
+                a
+                    color: $color-black
+                    text-decoration: none

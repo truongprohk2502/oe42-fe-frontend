@@ -1,0 +1,91 @@
+@import "../../../assets/style/vars"
+@import "../../../assets/style/common"
+
+%common-seat
+    @extend %flex-center
+    padding: 0.2rem 0
+
+section.order-seat-container
+    background-color: $color-orange-dark
+    padding: 1rem
+    .order-main-title
+        color: white
+        font-size: 1.2rem
+        font-weight: bold
+        text-transform: uppercase
+        margin-bottom: 0.5rem
+    .room-container
+        background-color: white
+        padding: 1rem 2rem
+        .screen
+            border-bottom: 0.2rem solid grey
+            width: fit-content
+            padding: 0 1rem
+            margin: 0 auto 2rem auto
+            @media screen and ( $sm )
+                padding: 0 5rem
+        .selection
+            display: flex
+            justify-content: space-evenly
+            font-size: 0.8rem
+            margin-bottom: 1rem
+            flex-wrap: wrap
+            .select-seat-item
+                width: 50%
+                i
+                    &[class~="green"]
+                        color: $green-color
+                    &[class~="red"]
+                        color: $red-color
+                    &[class~="grey"]
+                        color: $grey-color
+                    &[class~="blue"]
+                        color: $blue-color
+            @media screen and ( $sm )
+                .select-seat-item
+                    width: auto
+        .seat-container
+            display: grid
+            grid-column-gap: 0.2rem
+            grid-row-gap: 0.4rem
+            padding: 0.5rem 0
+            @extend %custom-scroll-bar
+            .label-seat
+                @extend %common-seat
+                border: 1px solid grey
+            .label-nothing
+                @extend %common-seat
+                &::after
+                    content: ""
+            .way-seat
+                @extend %common-seat
+                &::after
+                    content: ""
+            .enable-seat
+                @extend %common-seat
+                background-color: $grey-color
+                cursor: pointer
+                transition-duration: 0.2s
+                &:hover
+                    background-color: grey
+                    color: white
+            .selected-seat
+                @extend %common-seat
+                background-color: grey
+                color: white
+                cursor: pointer
+            .selecting-seat
+                @extend %common-seat
+                background-color: $green-color
+                color: white
+                cursor: not-allowed
+            .sold-seat
+                @extend %common-seat
+                background-color: $red-color
+                color: white
+                cursor: not-allowed
+            .unselectable-seat
+                @extend %common-seat
+                background-color: $blue-color
+                color: white
+                cursor: not-allowed

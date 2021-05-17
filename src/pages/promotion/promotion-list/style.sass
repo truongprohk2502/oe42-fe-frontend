@@ -1,0 +1,29 @@
+@import "../../../assets/style/vars"
+@import "../../../assets/style/common"
+
+section.list-promotion-container
+    @media screen and ( $md )
+        grid-column: 1 / span 2
+    @media screen and ( $lg )
+        grid-column: 1 / span 3
+    .promotion-title
+        width: fit-content
+        font-size: 1.2rem
+        font-weight: bold
+        border-bottom: 2px solid orange
+        margin-bottom: 2rem
+        text-transform: uppercase
+    .promotion-item-container
+        display: grid
+        grid-template-columns: repeat(1, 1fr)
+        grid-gap: 1rem
+        @media screen and ( $md )
+            grid-template-columns: repeat(2, 1fr)
+        @media screen and ( $lg )
+            grid-template-columns: repeat(3, 1fr)
+        .promotion-item
+            .info
+                span
+                    text-transform: uppercase
+    .pagination-section
+        margin-top: 1rem

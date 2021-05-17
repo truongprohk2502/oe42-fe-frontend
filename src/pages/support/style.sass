@@ -1,0 +1,55 @@
+@import "../../assets/style/vars"
+@import "../../assets/style/common"
+
+.support-page-container
+    .responsive-container
+        main
+            .support-title
+                margin-bottom: 2rem
+                font-size: 2rem
+                text-align: center
+            form.feedback-form
+                margin: 0
+                padding: 0.5rem
+                @media screen and ( $lg )
+                    margin: 0 3rem
+                    padding: 2rem 3rem
+                background-color: $grey-color
+                display: grid
+                grid-template-columns: repeat(3, 1fr)
+                grid-gap: 1rem
+                .error
+                    color: red
+                    font-size: 0.8rem
+                input, textarea
+                    width: 100%
+                    border: 1px solid transparent
+                    padding: 0.3rem 0.5rem
+                    &:focus
+                        border: 1px solid grey
+                        outline: none
+                #fullname
+                    grid-column: 1 / span 3
+                    @media screen and ( $md )
+                        grid-column: 1 / 2
+                #email
+                    grid-column: 1 / span 3
+                    @media screen and ( $md )
+                        grid-column: 2 / 3
+                #phone
+                    grid-column: 1 / span 3
+                    @media screen and ( $md )
+                        grid-column: 3 / 4
+                #content
+                    grid-column: 1 / span 3
+                .button-bound
+                    grid-column: 1 / span 3
+                    display: flex
+                    justify-content: flex-end
+                    button
+                        color: white
+                        background-color: $color-orange-dark
+                        padding: 0.3rem 0.7rem
+                        border: none
+                        &:focus
+                            outline: none

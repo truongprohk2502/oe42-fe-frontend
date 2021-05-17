@@ -1,0 +1,59 @@
+@import "../../assets/style/vars"
+@import "../../assets/style/common"
+
+section.register-page-container
+    @extend %flex-center
+    min-height: 100vh
+    background-image: linear-gradient(to right, #0185ee , #f107f2)
+    padding: 0 2rem
+    @media screen and ( $md )
+        padding: 0
+    .form-container
+        width: 50rem
+        border-radius: 1rem
+        background-color: white
+        display: grid
+        grid-template-columns: repeat(1, 1fr)
+        @media screen and ( $sm )
+            grid-template-columns: repeat(2, 1fr)
+        .avatar
+            display: flex
+            align-items: center
+            padding: 3rem
+            img
+                width: 100%
+                border-radius: 100%
+                box-shadow: 3px 3px 15px 5px #cfcece
+        .toggle-btn
+            display: flex
+            justify-content: flex-end
+            padding-top: 1rem
+            padding-right: 4rem
+        form
+            @extend %flex-center
+            flex-direction: column
+            padding: 2rem 4rem
+            & > span
+                color: red
+                font-size: 0.9rem
+            .form-title
+                font-weight: bold
+                letter-spacing: 0.2rem
+                padding: 0.5rem 0
+            button[type="submit"]
+                margin-top: 0.5rem
+                width: 100%
+                border: none
+                border-radius: 1.5rem
+                background-color: $green-color
+                color: white
+                padding: 0.4rem 0
+                letter-spacing: 0.2rem
+                &:focus
+                    outline: none
+            .register-item
+                margin-top: 1rem
+            .error-item
+                margin: 1rem 0
+                color: red
+                font-size: 0.9rem

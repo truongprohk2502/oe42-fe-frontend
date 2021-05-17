@@ -1,0 +1,33 @@
+@import "../../../assets/style/vars"
+@import "../../../assets/style/common"
+
+.list-cinema-container
+    .filter-container
+        @media screen and ( $md )
+            display: flex
+        .filter-item
+            margin-right: 2rem
+            margin-bottom: 1rem
+            @media screen and ( $sm )
+                display: flex
+            & > span
+                margin-right: 0.5rem
+            form
+                width: fit-content
+                position: relative
+                height: fit-content
+                input
+                    background-color: transparent
+                    border: 1px solid $color-black
+                    padding: 0 1.7rem 0 0.5rem
+                    width: 15rem
+                button
+                    height: 100%
+                    @include transparent-button(black)
+                    position: absolute
+                    right: 0
+            select
+                display: block
+                padding: 0.1rem 0.2rem
+                width: 15rem
+                height: fit-content

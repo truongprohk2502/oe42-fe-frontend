@@ -1,0 +1,26 @@
+@keyframes spin
+    0%
+        transform: rotateZ(0deg)
+    100%
+        transform: rotateZ(360deg)
+
+.spinner-container
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    display: flex
+    justify-content: center
+    background-color: rgba(0, 0, 0, 0.5)
+    color: white
+    z-index: 1000
+    i.fa
+        margin-top: 25rem
+        height: fit-content
+        animation-name: spin
+        animation-duration: 1s
+        animation-timing-function: linear
+        animation-iteration-count: infinite
+        font-size: 2rem
+        color: orange

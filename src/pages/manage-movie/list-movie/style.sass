@@ -1,0 +1,68 @@
+@import "../../../assets/style/vars"
+@import "../../../assets/style/common"
+
+.list-movie-container
+    .action-container
+        display: grid
+        justify-content: space-between
+        margin-bottom: 1rem
+        grid-template-columns: (4, 1fr)
+        grid-row-gap: 0.5rem
+        button.add-btn
+            grid-column: 1 / 5
+            width: fit-content
+            @extend %add-button
+            margin: 0
+            @media screen and ( $md )
+                grid-column: 1 / 2
+        .filter-group
+            grid-column: 1 / 5
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            @media screen and ( $md )
+                grid-column: 2 / 5
+                justify-content: flex-end
+                flex-direction: row
+            form
+                width: fit-content
+                position: relative
+                input
+                    background-color: transparent
+                    border: 1px solid $color-black
+                    padding: 0.2rem 1.7rem 0.2rem 0.5rem
+                button
+                    @include transparent-button(black)
+                    position: absolute
+                    font-size: 1.2rem
+                    right: 0
+            .select-item
+                display: flex
+                margin-top: 0.5rem
+                @media screen and ( $md )
+                    margin-top: 0
+                span
+                    margin-right: 0.5rem
+                    display: inline-flex
+                    align-items: center
+                    margin-left: 0
+                    @media screen and ( $md )
+                        margin-left: 2rem
+    table
+        th.sm-col
+            min-width: 5rem
+        th.md-col
+            min-width: 10rem
+        th.lg-col
+            min-width: 20rem
+        td.limit-row
+            @include limit-row(4)
+            border-bottom: none
+        img
+            max-width: 100%
+        a.btn
+            text-decoration: none
+            background-color: $color-orange-dark
+            color: white
+            padding: 0.2rem 0.5rem
+            border-radius: 0.2rem

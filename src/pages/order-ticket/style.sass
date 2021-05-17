@@ -1,0 +1,49 @@
+@import "../../assets/style/vars"
+@import "../../assets/style/common"
+
+.order-ticket-page-container
+    main
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        grid-gap: 1rem
+        section.order-container
+            grid-column: 1 / span 4
+        section.info-container
+            grid-column: 1 / span 4
+            img
+                width: 100%
+            .movie-title
+                margin-top: 0.5rem
+                padding: 0.3rem 0
+                font-weight: bold
+                text-align: center
+                text-transform: uppercase
+            .info-bound
+                padding: 0.5rem
+                background-color: $light-grey-bg-color
+                height: fit-content
+                .info-item-container
+                    .info-item
+                        font-size: 0.8rem
+                        padding: 0.8rem 0
+                        border-bottom: 1px solid lightgrey
+                    .info-total-item
+                        padding: 0.8rem 0
+                        span
+                            color: $color-orange-dark
+                .action
+                    display: flex
+                    justify-content: space-evenly
+                    margin-bottom: 1rem
+                    button
+                        border: none
+                        background-color: $color-orange-dark
+                        color: white
+                        border-radius: 0.2rem
+                        &:focus
+                            outline: none
+        @media screen and ( $md )
+            section.order-container
+                grid-column: 1 / span 3
+            section.info-container
+                grid-column: span 1 / 5

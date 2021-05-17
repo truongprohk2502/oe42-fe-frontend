@@ -1,0 +1,32 @@
+@import "../../assets/style/vars"
+@import "../../assets/style/common"
+
+.checkbox-item
+    label
+        position: relative
+        display: inline-block
+        padding: 0.1rem 0.6rem 0.1rem 0.4rem
+        border-radius: 1rem
+        background-color: $sub-switch-btn
+        transition-duration: 0.3s
+        cursor: pointer
+        span
+            &:first-of-type
+                margin-right: 0.7rem
+        i
+            position: absolute
+            display: block
+            font-size: 1.7rem
+            top: 0
+            left: 0.2rem
+            color: white
+            transition-duration: 0.3s
+    input#change-language
+        visibility: hidden
+        &:checked
+            & + label
+                background-color: $green-color
+                span
+                    color: white
+                i
+                    left: 50%

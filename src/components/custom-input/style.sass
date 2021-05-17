@@ -1,0 +1,32 @@
+@import "../../assets/style/vars"
+@import "../../assets/style/common"
+    
+.custom-input-container
+    width: 100%
+    margin: 0.5rem 0
+    position: relative
+    i.main-icon
+        position: absolute
+        font-size: 1.4rem
+        top: 0.5rem
+        left: 1rem
+        color: grey
+    i.pass-icon
+        position: absolute
+        font-size: 1.4rem
+        top: 0.5rem
+        right: 1rem
+        color: grey
+        cursor: pointer
+    input
+        width: 100%
+        padding: 0.4rem 1rem 0.4rem 2.4rem
+        border: 1px solid $input-bg-color
+        background-color: $input-bg-color
+        border-radius: 1.5rem
+        &[class~="password-input"]
+        &:focus
+            outline: none
+            border: 1px solid grey
+            & ~ i.fa
+                color: black

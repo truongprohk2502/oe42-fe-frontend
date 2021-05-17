@@ -1,0 +1,36 @@
+@import "../../assets/style/vars"
+@import "../../assets/style/common"
+
+.sub-content-title
+    @extend %title
+    margin-bottom: 2rem
+    text-transform: uppercase
+article.movie-item
+    margin-bottom: 2rem
+    .img-container
+        position: relative
+        img
+            width: 100%
+        .action-container
+            visibility: hidden
+            opacity: 0
+            transition-duration: 0.3s
+            @extend %absolute-zero
+            @extend %flex-center
+            background-color: rgba(0, 0, 0, 0.5)
+            a
+                display: inline-block
+                padding: 0.5rem 2rem
+                background-color: transparent
+                border: 1px solid white
+                transition-duration: 0.3s
+                @include link-style(white,white)
+                &:hover,&:active
+                    background-color: $color-orange-dark
+                    border: 1px solid $color-orange-dark
+        &:hover
+            .action-container
+                visibility: visible
+                opacity: 1
+    h5
+        margin: 0.5rem 0

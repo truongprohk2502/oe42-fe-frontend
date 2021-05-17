@@ -1,0 +1,23 @@
+@import "../../assets/style/vars"
+@import "../../assets/style/common"
+
+.progress-container
+    margin-bottom: 2rem
+    position: relative
+    display: none
+    @media screen and ( $sm )
+        display: grid
+    .bar
+        background-color: lightgrey
+    .progress-item
+        z-index: 100
+        text-align: center
+        .num
+            width: 2rem
+            height: 2rem
+            border-radius: 2rem
+            background-color: lightgrey
+            color: white
+            font-weight: bold
+            margin: auto
+            @extend %flex-center
